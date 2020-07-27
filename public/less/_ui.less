@@ -36,6 +36,9 @@
   }
 
   &.dropdown,
+  &.selection.dropdown,
+  &.fluid.dropdown,
+  &.fluid.selection.dropdown,
   &.menu,
   &.menu.secondary,
   &.menu.tabular,
@@ -174,6 +177,9 @@
   &.dropdown .menu > .item,
   &.dropdown .menu .selected.item,
   &.dropdown .menu .active.item,
+  &.selection.dropdown .menu > .item,
+  &.selection.dropdown .menu .selected.item,
+  &.selection.dropdown .menu .active.item,
   &.menu .dropdown .menu > .item {
     &:hover {
       color: #fff !important;
@@ -199,10 +205,27 @@
     .__error-stuff();
   }
 
-  &.breadcrumb .divider {
+  &.breadcrumb .divider,
+  &.table thead th,
+  &.table tr td {
     color: #fff !important;
   }
 
+  &.selection.dropdown {
+    .__background-stuff();
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #fff !important;
+  }
+
+  &.attached.segment {
+    position: relative;
+    z-index: 8 !important;
+  }
+
+}
+
+i.dropdown.icon {
+  border: none !important;
 }
 
 .ui.basic.label,
