@@ -500,7 +500,8 @@ canvas#starfield {
 }
 .ui.segment,
 .ui.menu,
-.ui.secondary.menu {
+.ui.secondary.menu,
+.ui.vertical.menu {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -508,24 +509,58 @@ canvas#starfield {
   color: #fff;
 }
 .ui.secondary.menu .item,
+.ui.secondary.menu .header.item,
 .ui.menu .item,
-.ui.menu a.item {
+.ui.menu .header.item,
+.ui.menu a.item,
+.ui.menu a.header.item,
+.ui.tabular.menu .item,
+.ui.tabular.menu .header.item,
+.ui.vertical.menu .item,
+.ui.vertical.menu .header.item {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
   color: #eee;
 }
 .ui.secondary.menu .item:hover,
+.ui.secondary.menu .header.item:hover,
 .ui.menu .item:hover,
-.ui.menu a.item:hover {
+.ui.menu .header.item:hover,
+.ui.menu a.item:hover,
+.ui.menu a.header.item:hover,
+.ui.tabular.menu .item:hover,
+.ui.tabular.menu .header.item:hover,
+.ui.vertical.menu .item:hover,
+.ui.vertical.menu .header.item:hover {
   color: #fff;
 }
 .ui.secondary.menu .item.active,
+.ui.secondary.menu .header.item.active,
 .ui.menu .item.active,
-.ui.menu a.item.active {
+.ui.menu .header.item.active,
+.ui.menu a.item.active,
+.ui.menu a.header.item.active,
+.ui.tabular.menu .item.active,
+.ui.tabular.menu .header.item.active,
+.ui.vertical.menu .item.active,
+.ui.vertical.menu .header.item.active {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   color: #fff;
   font-weight: bold;
 }
 .ui.secondary.menu .item.active:hover,
+.ui.secondary.menu .header.item.active:hover,
 .ui.menu .item.active:hover,
-.ui.menu a.item.active:hover {
+.ui.menu .header.item.active:hover,
+.ui.menu a.item.active:hover,
+.ui.menu a.header.item.active:hover,
+.ui.tabular.menu .item.active:hover,
+.ui.tabular.menu .header.item.active:hover,
+.ui.vertical.menu .item.active:hover,
+.ui.vertical.menu .header.item.active:hover {
   color: #fff;
   font-weight: bold;
 }
@@ -533,8 +568,21 @@ canvas#starfield {
 .ui.form .inline.field > select,
 .ui.form .inline.fields .field > input,
 .ui.form .inline.fields .field > select,
+.ui.input > input,
 .ui.form textarea,
-.ui.selection.dropdown {
+.ui.selection.dropdown,
+.ui.form input:not([type]),
+.ui.form input[type=date],
+.ui.form input[type=datetime-local],
+.ui.form input[type=email],
+.ui.form input[type=file],
+.ui.form input[type=number],
+.ui.form input[type=password],
+.ui.form input[type=search],
+.ui.form input[type=tel],
+.ui.form input[type=text],
+.ui.form input[type=time],
+.ui.form input[type=url] {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -545,16 +593,42 @@ canvas#starfield {
 .ui.form .inline.field > select:hover,
 .ui.form .inline.fields .field > input:hover,
 .ui.form .inline.fields .field > select:hover,
+.ui.input > input:hover,
 .ui.form textarea:hover,
-.ui.selection.dropdown:hover {
+.ui.selection.dropdown:hover,
+.ui.form input:not([type]):hover,
+.ui.form input[type=date]:hover,
+.ui.form input[type=datetime-local]:hover,
+.ui.form input[type=email]:hover,
+.ui.form input[type=file]:hover,
+.ui.form input[type=number]:hover,
+.ui.form input[type=password]:hover,
+.ui.form input[type=search]:hover,
+.ui.form input[type=tel]:hover,
+.ui.form input[type=text]:hover,
+.ui.form input[type=time]:hover,
+.ui.form input[type=url]:hover {
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 .ui.form .inline.field > input:focus,
 .ui.form .inline.field > select:focus,
 .ui.form .inline.fields .field > input:focus,
 .ui.form .inline.fields .field > select:focus,
+.ui.input > input:focus,
 .ui.form textarea:focus,
-.ui.selection.dropdown:focus {
+.ui.selection.dropdown:focus,
+.ui.form input:not([type]):focus,
+.ui.form input[type=date]:focus,
+.ui.form input[type=datetime-local]:focus,
+.ui.form input[type=email]:focus,
+.ui.form input[type=file]:focus,
+.ui.form input[type=number]:focus,
+.ui.form input[type=password]:focus,
+.ui.form input[type=search]:focus,
+.ui.form input[type=tel]:focus,
+.ui.form input[type=text]:focus,
+.ui.form input[type=time]:focus,
+.ui.form input[type=url]:focus {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -594,6 +668,15 @@ canvas#starfield {
   -webkit-backdrop-filter: blur(2px);
   border-color: rgba(0, 255, 0, 0.6);
 }
+.ui.basic.label,
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
 .ui.selection.visible.dropdown > .text:not(.default),
 .ui.dropdown .menu > .item,
 .ui.dropdown .menu .selected.item,
@@ -608,7 +691,8 @@ canvas#starfield {
 .ui.menu .ui.dropdown .menu > .item:hover {
   color: #fff !important;
 }
-.ui.menu .ui.dropdown .menu > .item:hover {
+.ui.menu .ui.dropdown .menu > .item:hover,
+.ui.header {
   color: #fff !important;
 }
 .ui.dropdown .menu {
@@ -701,7 +785,8 @@ canvas#starfield {
 .ui.secondary.menu a.item:hover,
 .ui.link.menu .item:active,
 .ui.menu .link.item:active,
-.ui.menu a.item:active {
+.ui.menu a.item:active,
+.ui.breadcrumb .divider {
   color: #fff !important;
 }
 .dashboard {
@@ -720,6 +805,14 @@ canvas#starfield {
 }
 .following.bar .top.menu .menu .item {
   color: #fff !important;
+}
+.header-wrapper .ui.tabular.menu.navbar {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 3px !important;
+}
+.header-wrapper .ui.tabular.menu .item.active {
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 3px !important;
 }
 .markdown:not(code) {
   overflow: hidden;
@@ -1481,9 +1574,7 @@ canvas#starfield {
   color: #000;
 }
 .repository .header-wrapper {
-  background-color: rgba(0, 0, 0, 0.55) !important;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: transparent !important;
   margin-top: -15px;
   padding-top: 15px;
 }

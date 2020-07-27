@@ -12,15 +12,24 @@
 
 .ui.segment,
 .ui.menu,
-.ui.secondary.menu {
+.ui.secondary.menu,
+.ui.vertical.menu {
   .__background-stuff();
   border-color: rgba(255, 255, 255, 0.3);
   color: #fff;
 }
 
 .ui.secondary.menu .item,
+.ui.secondary.menu .header.item,
 .ui.menu .item,
-.ui.menu a.item {
+.ui.menu .header.item,
+.ui.menu a.item,
+.ui.menu a.header.item,
+.ui.tabular.menu .item,
+.ui.tabular.menu .header.item,
+.ui.vertical.menu .item,
+.ui.vertical.menu .header.item {
+  .__background-stuff() !important;
   color: #eee;
 
   &:hover {
@@ -28,6 +37,7 @@
   }
 
   &.active {
+    .__background-stuff();
     color: #fff;
     font-weight: bold;
 
@@ -42,8 +52,21 @@
 .ui.form .inline.field > select,
 .ui.form .inline.fields .field > input,
 .ui.form .inline.fields .field > select,
+.ui.input > input,
 .ui.form textarea,
-.ui.selection.dropdown {
+.ui.selection.dropdown,
+.ui.form input:not([type]),
+.ui.form input[type=date],
+.ui.form input[type=datetime-local],
+.ui.form input[type=email],
+.ui.form input[type=file],
+.ui.form input[type=number],
+.ui.form input[type=password],
+.ui.form input[type=search],
+.ui.form input[type=tel],
+.ui.form input[type=text],
+.ui.form input[type=time],
+.ui.form input[type=url] {
   .__background-stuff();
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
@@ -59,7 +82,7 @@
 }
 
 .ui.button, .ui.buttons .button,
-.ui.basic.button, .ui.basic.buttons .button{
+.ui.basic.button, .ui.basic.buttons .button {
   .__background-stuff() !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
   color: #eee !important;
@@ -81,6 +104,14 @@
   }
 }
 
+.ui.basic.label,
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre {
+  .__background-stuff() !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
 .ui.selection.visible.dropdown > .text:not(.default),
 .ui.dropdown .menu > .item,
 .ui.dropdown .menu .selected.item,
@@ -93,7 +124,8 @@
   color: #ddd !important;
 }
 
-.ui.menu .ui.dropdown .menu > .item:hover {
+.ui.menu .ui.dropdown .menu > .item:hover,
+.ui.header {
   color: #fff !important;
 }
 
@@ -105,7 +137,34 @@
   color: #fff;
 }
 
-.ui.form .field.error input:not([type]), .ui.form .field.error input[type=date], .ui.form .field.error input[type=datetime-local], .ui.form .field.error input[type=email], .ui.form .field.error input[type=file], .ui.form .field.error input[type=number], .ui.form .field.error input[type=password], .ui.form .field.error input[type=search], .ui.form .field.error input[type=tel], .ui.form .field.error input[type=text], .ui.form .field.error input[type=time], .ui.form .field.error input[type=url], .ui.form .field.error select, .ui.form .field.error textarea, .ui.form .fields.error .field input:not([type]), .ui.form .fields.error .field input[type=date], .ui.form .fields.error .field input[type=datetime-local], .ui.form .fields.error .field input[type=email], .ui.form .fields.error .field input[type=file], .ui.form .fields.error .field input[type=number], .ui.form .fields.error .field input[type=password], .ui.form .fields.error .field input[type=search], .ui.form .fields.error .field input[type=tel], .ui.form .fields.error .field input[type=text], .ui.form .fields.error .field input[type=time], .ui.form .fields.error .field input[type=url], .ui.form .fields.error .field select, .ui.form .fields.error .field textarea {
+.ui.form .field.error input:not([type]),
+.ui.form .field.error input[type=date],
+.ui.form .field.error input[type=datetime-local],
+.ui.form .field.error input[type=email],
+.ui.form .field.error input[type=file],
+.ui.form .field.error input[type=number],
+.ui.form .field.error input[type=password],
+.ui.form .field.error input[type=search],
+.ui.form .field.error input[type=tel],
+.ui.form .field.error input[type=text],
+.ui.form .field.error input[type=time],
+.ui.form .field.error input[type=url],
+.ui.form .field.error select,
+.ui.form .field.error textarea,
+.ui.form .fields.error .field input:not([type]),
+.ui.form .fields.error .field input[type=date],
+.ui.form .fields.error .field input[type=datetime-local],
+.ui.form .fields.error .field input[type=email],
+.ui.form .fields.error .field input[type=file],
+.ui.form .fields.error .field input[type=number],
+.ui.form .fields.error .field input[type=password],
+.ui.form .fields.error .field input[type=search],
+.ui.form .fields.error .field input[type=tel],
+.ui.form .fields.error .field input[type=text],
+.ui.form .fields.error .field input[type=time],
+.ui.form .fields.error .field input[type=url],
+.ui.form .fields.error .field select,
+.ui.form .fields.error .field textarea {
   &:focus {
     .__error-stuff();
   }
@@ -121,8 +180,13 @@
   color: #fff !important;
 }
 
-.ui.secondary.menu .dropdown.item:hover, .ui.secondary.menu .link.item:hover, .ui.secondary.menu a.item:hover,
-.ui.link.menu .item:active, .ui.menu .link.item:active, .ui.menu a.item:active {
+.ui.secondary.menu .dropdown.item:hover,
+.ui.secondary.menu .link.item:hover,
+.ui.secondary.menu a.item:hover,
+.ui.link.menu .item:active,
+.ui.menu .link.item:active,
+.ui.menu a.item:active,
+.ui.breadcrumb .divider {
   color: #fff !important;
 }
 
@@ -142,5 +206,17 @@
 
   .item {
     color: #fff !important;
+  }
+}
+
+.header-wrapper {
+  .ui.tabular.menu.navbar {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 3px !important;
+  }
+
+  .ui.tabular.menu .item.active {
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 3px !important;
   }
 }
