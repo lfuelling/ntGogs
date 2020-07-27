@@ -381,6 +381,88 @@ code.wrap {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
 }
+.__error-stuff {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+.ui.form .field.error input:not([type]),
+.ui.form .field.error input[type=date],
+.ui.form .field.error input[type=datetime-local],
+.ui.form .field.error input[type=email],
+.ui.form .field.error input[type=file],
+.ui.form .field.error input[type=number],
+.ui.form .field.error input[type=password],
+.ui.form .field.error input[type=search],
+.ui.form .field.error input[type=tel],
+.ui.form .field.error input[type=text],
+.ui.form .field.error input[type=time],
+.ui.form .field.error input[type=url],
+.ui.form .field.error select,
+.ui.form .field.error textarea,
+.ui.form .fields.error .field input:not([type]),
+.ui.form .fields.error .field input[type=date],
+.ui.form .fields.error .field input[type=datetime-local],
+.ui.form .fields.error .field input[type=email],
+.ui.form .fields.error .field input[type=file],
+.ui.form .fields.error .field input[type=number],
+.ui.form .fields.error .field input[type=password],
+.ui.form .fields.error .field input[type=search],
+.ui.form .fields.error .field input[type=tel],
+.ui.form .fields.error .field input[type=text],
+.ui.form .fields.error .field input[type=time],
+.ui.form .fields.error .field input[type=url],
+.ui.form .fields.error .field select,
+.ui.form .fields.error .field textarea {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+.ui.form .field.error input:not([type]):focus,
+.ui.form .field.error input[type=date]:focus,
+.ui.form .field.error input[type=datetime-local]:focus,
+.ui.form .field.error input[type=email]:focus,
+.ui.form .field.error input[type=file]:focus,
+.ui.form .field.error input[type=number]:focus,
+.ui.form .field.error input[type=password]:focus,
+.ui.form .field.error input[type=search]:focus,
+.ui.form .field.error input[type=tel]:focus,
+.ui.form .field.error input[type=text]:focus,
+.ui.form .field.error input[type=time]:focus,
+.ui.form .field.error input[type=url]:focus,
+.ui.form .field.error select:focus,
+.ui.form .field.error textarea:focus,
+.ui.form .fields.error .field input:not([type]):focus,
+.ui.form .fields.error .field input[type=date]:focus,
+.ui.form .fields.error .field input[type=datetime-local]:focus,
+.ui.form .fields.error .field input[type=email]:focus,
+.ui.form .fields.error .field input[type=file]:focus,
+.ui.form .fields.error .field input[type=number]:focus,
+.ui.form .fields.error .field input[type=password]:focus,
+.ui.form .fields.error .field input[type=search]:focus,
+.ui.form .fields.error .field input[type=tel]:focus,
+.ui.form .fields.error .field input[type=text]:focus,
+.ui.form .fields.error .field input[type=time]:focus,
+.ui.form .fields.error .field input[type=url]:focus,
+.ui.form .fields.error .field select:focus,
+.ui.form .fields.error .field textarea:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+.ui.negative.message {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
 footer {
   margin-top: 54px !important;
   height: 40px;
