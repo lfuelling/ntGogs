@@ -12,13 +12,8 @@ body:not(.full-width) {
   min-width: 1020px;
   color: #fff !important;
 }
-canvas#starfield {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+i.octicon:focus {
+  outline: none;
 }
 .ui.container:not(.fluid) {
   width: 980px !important;
@@ -84,7 +79,7 @@ code.wrap {
   min-height: 100%;
 }
 .following.bar {
-  z-index: 900;
+  z-index: 9000;
   left: 0;
   width: 100%;
 }
@@ -338,131 +333,6 @@ code.wrap {
 .scrolling.menu .item.selected {
   font-weight: 700 !important;
 }
-.ui.segment {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.ui.form .inline.field > input,
-.ui.form .inline.field > select,
-.ui.form .inline.fields .field > input,
-.ui.form .inline.fields .field > select,
-.ui.selection.dropdown {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-.ui.form .inline.field > input:hover,
-.ui.form .inline.field > select:hover,
-.ui.form .inline.fields .field > input:hover,
-.ui.form .inline.fields .field > select:hover,
-.ui.selection.dropdown:hover {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-}
-.ui.selection.visible.dropdown > .text:not(.default),
-.ui.dropdown .menu > .item,
-.ui.dropdown .menu .selected.item,
-.ui.dropdown .menu .active.item {
-  color: #eee;
-}
-.ui.selection.visible.dropdown > .text:not(.default):hover,
-.ui.dropdown .menu > .item:hover,
-.ui.dropdown .menu .selected.item:hover,
-.ui.dropdown .menu .active.item:hover {
-  color: #fff;
-}
-.ui.dropdown .menu {
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-.__error-stuff {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border-color: rgba(255, 0, 0, 0.5);
-  color: #9f3a38;
-}
-.ui.form .field.error input:not([type]),
-.ui.form .field.error input[type=date],
-.ui.form .field.error input[type=datetime-local],
-.ui.form .field.error input[type=email],
-.ui.form .field.error input[type=file],
-.ui.form .field.error input[type=number],
-.ui.form .field.error input[type=password],
-.ui.form .field.error input[type=search],
-.ui.form .field.error input[type=tel],
-.ui.form .field.error input[type=text],
-.ui.form .field.error input[type=time],
-.ui.form .field.error input[type=url],
-.ui.form .field.error select,
-.ui.form .field.error textarea,
-.ui.form .fields.error .field input:not([type]),
-.ui.form .fields.error .field input[type=date],
-.ui.form .fields.error .field input[type=datetime-local],
-.ui.form .fields.error .field input[type=email],
-.ui.form .fields.error .field input[type=file],
-.ui.form .fields.error .field input[type=number],
-.ui.form .fields.error .field input[type=password],
-.ui.form .fields.error .field input[type=search],
-.ui.form .fields.error .field input[type=tel],
-.ui.form .fields.error .field input[type=text],
-.ui.form .fields.error .field input[type=time],
-.ui.form .fields.error .field input[type=url],
-.ui.form .fields.error .field select,
-.ui.form .fields.error .field textarea {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border-color: rgba(255, 0, 0, 0.5);
-  color: #9f3a38;
-}
-.ui.form .field.error input:not([type]):focus,
-.ui.form .field.error input[type=date]:focus,
-.ui.form .field.error input[type=datetime-local]:focus,
-.ui.form .field.error input[type=email]:focus,
-.ui.form .field.error input[type=file]:focus,
-.ui.form .field.error input[type=number]:focus,
-.ui.form .field.error input[type=password]:focus,
-.ui.form .field.error input[type=search]:focus,
-.ui.form .field.error input[type=tel]:focus,
-.ui.form .field.error input[type=text]:focus,
-.ui.form .field.error input[type=time]:focus,
-.ui.form .field.error input[type=url]:focus,
-.ui.form .field.error select:focus,
-.ui.form .field.error textarea:focus,
-.ui.form .fields.error .field input:not([type]):focus,
-.ui.form .fields.error .field input[type=date]:focus,
-.ui.form .fields.error .field input[type=datetime-local]:focus,
-.ui.form .fields.error .field input[type=email]:focus,
-.ui.form .fields.error .field input[type=file]:focus,
-.ui.form .fields.error .field input[type=number]:focus,
-.ui.form .fields.error .field input[type=password]:focus,
-.ui.form .fields.error .field input[type=search]:focus,
-.ui.form .fields.error .field input[type=tel]:focus,
-.ui.form .fields.error .field input[type=text]:focus,
-.ui.form .fields.error .field input[type=time]:focus,
-.ui.form .fields.error .field input[type=url]:focus,
-.ui.form .fields.error .field select:focus,
-.ui.form .fields.error .field textarea:focus {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border-color: rgba(255, 0, 0, 0.5);
-  color: #9f3a38;
-}
-.ui.negative.message {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border-color: rgba(255, 0, 0, 0.5);
-  color: #9f3a38;
-}
 footer {
   margin-top: 54px !important;
   height: 40px;
@@ -607,6 +477,249 @@ footer .ui.language .menu {
   vertical-align: middle;
   margin-top: 0;
   margin-bottom: 0;
+}
+canvas#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.__background-stuff {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.__error-stuff {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+.ui.segment,
+.ui.menu,
+.ui.secondary.menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.ui.secondary.menu .item,
+.ui.menu .item,
+.ui.menu a.item {
+  color: #eee;
+}
+.ui.secondary.menu .item:hover,
+.ui.menu .item:hover,
+.ui.menu a.item:hover {
+  color: #fff;
+}
+.ui.secondary.menu .item.active,
+.ui.menu .item.active,
+.ui.menu a.item.active {
+  color: #fff;
+  font-weight: bold;
+}
+.ui.secondary.menu .item.active:hover,
+.ui.menu .item.active:hover,
+.ui.menu a.item.active:hover {
+  color: #fff;
+  font-weight: bold;
+}
+.ui.form .inline.field > input,
+.ui.form .inline.field > select,
+.ui.form .inline.fields .field > input,
+.ui.form .inline.fields .field > select,
+.ui.form textarea,
+.ui.selection.dropdown {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.ui.form .inline.field > input:hover,
+.ui.form .inline.field > select:hover,
+.ui.form .inline.fields .field > input:hover,
+.ui.form .inline.fields .field > select:hover,
+.ui.form textarea:hover,
+.ui.selection.dropdown:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.ui.form .inline.field > input:focus,
+.ui.form .inline.field > select:focus,
+.ui.form .inline.fields .field > input:focus,
+.ui.form .inline.fields .field > select:focus,
+.ui.form textarea:focus,
+.ui.selection.dropdown:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: #fff;
+}
+.ui.button,
+.ui.buttons .button,
+.ui.basic.button,
+.ui.basic.buttons .button {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #eee !important;
+}
+.ui.button:hover,
+.ui.buttons .button:hover,
+.ui.basic.button:hover,
+.ui.basic.buttons .button:hover {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  color: #fff !important;
+}
+.ui.green.button,
+.ui.green.buttons .button {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(0, 255, 0, 0.3);
+}
+.ui.green.button:hover,
+.ui.green.buttons .button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(0, 255, 0, 0.6);
+}
+.ui.selection.visible.dropdown > .text:not(.default),
+.ui.dropdown .menu > .item,
+.ui.dropdown .menu .selected.item,
+.ui.dropdown .menu .active.item,
+.ui.menu .ui.dropdown .menu > .item {
+  color: #ddd !important;
+}
+.ui.selection.visible.dropdown > .text:not(.default):hover,
+.ui.dropdown .menu > .item:hover,
+.ui.dropdown .menu .selected.item:hover,
+.ui.dropdown .menu .active.item:hover,
+.ui.menu .ui.dropdown .menu > .item:hover {
+  color: #fff !important;
+}
+.ui.menu .ui.dropdown .menu > .item:hover {
+  color: #fff !important;
+}
+.ui.dropdown .menu {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.ui.form .field.error input:not([type]),
+.ui.form .field.error input[type=date],
+.ui.form .field.error input[type=datetime-local],
+.ui.form .field.error input[type=email],
+.ui.form .field.error input[type=file],
+.ui.form .field.error input[type=number],
+.ui.form .field.error input[type=password],
+.ui.form .field.error input[type=search],
+.ui.form .field.error input[type=tel],
+.ui.form .field.error input[type=text],
+.ui.form .field.error input[type=time],
+.ui.form .field.error input[type=url],
+.ui.form .field.error select,
+.ui.form .field.error textarea,
+.ui.form .fields.error .field input:not([type]),
+.ui.form .fields.error .field input[type=date],
+.ui.form .fields.error .field input[type=datetime-local],
+.ui.form .fields.error .field input[type=email],
+.ui.form .fields.error .field input[type=file],
+.ui.form .fields.error .field input[type=number],
+.ui.form .fields.error .field input[type=password],
+.ui.form .fields.error .field input[type=search],
+.ui.form .fields.error .field input[type=tel],
+.ui.form .fields.error .field input[type=text],
+.ui.form .fields.error .field input[type=time],
+.ui.form .fields.error .field input[type=url],
+.ui.form .fields.error .field select,
+.ui.form .fields.error .field textarea {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+.ui.form .field.error input:not([type]):focus,
+.ui.form .field.error input[type=date]:focus,
+.ui.form .field.error input[type=datetime-local]:focus,
+.ui.form .field.error input[type=email]:focus,
+.ui.form .field.error input[type=file]:focus,
+.ui.form .field.error input[type=number]:focus,
+.ui.form .field.error input[type=password]:focus,
+.ui.form .field.error input[type=search]:focus,
+.ui.form .field.error input[type=tel]:focus,
+.ui.form .field.error input[type=text]:focus,
+.ui.form .field.error input[type=time]:focus,
+.ui.form .field.error input[type=url]:focus,
+.ui.form .field.error select:focus,
+.ui.form .field.error textarea:focus,
+.ui.form .fields.error .field input:not([type]):focus,
+.ui.form .fields.error .field input[type=date]:focus,
+.ui.form .fields.error .field input[type=datetime-local]:focus,
+.ui.form .fields.error .field input[type=email]:focus,
+.ui.form .fields.error .field input[type=file]:focus,
+.ui.form .fields.error .field input[type=number]:focus,
+.ui.form .fields.error .field input[type=password]:focus,
+.ui.form .fields.error .field input[type=search]:focus,
+.ui.form .fields.error .field input[type=tel]:focus,
+.ui.form .fields.error .field input[type=text]:focus,
+.ui.form .fields.error .field input[type=time]:focus,
+.ui.form .fields.error .field input[type=url]:focus,
+.ui.form .fields.error .field select:focus,
+.ui.form .fields.error .field textarea:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+.ui.negative.message {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+.following.bar .top.menu a.item:hover {
+  color: #fff !important;
+}
+.ui.secondary.menu .dropdown.item:hover,
+.ui.secondary.menu .link.item:hover,
+.ui.secondary.menu a.item:hover,
+.ui.link.menu .item:active,
+.ui.menu .link.item:active,
+.ui.menu a.item:active {
+  color: #fff !important;
+}
+.dashboard {
+  position: relative;
+}
+.following.bar {
+  position: relative;
+}
+.following.bar .top.menu .menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff !important;
+}
+.following.bar .top.menu .menu .item {
+  color: #fff !important;
 }
 .markdown:not(code) {
   overflow: hidden;
