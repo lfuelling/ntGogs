@@ -15,6 +15,7 @@
   .segment,
   .menu,
   .menu.secondary,
+  .menu.dropdown,
   .menu.vertical {
     .__background-stuff();
     border-color: rgba(255, 255, 255, 0.3);
@@ -24,35 +25,39 @@
   .menu,
   .menu.secondary,
   .menu.tabular,
+  &.dropdown,
+  .menu.dropdown,
   .menu.link,
   .menu.vertical {
 
     .item,
-    a.item {
-      color: #ddd;
+    a.item,
+    &>.item,
+    &>a.item {
+      color: #ddd !important;
 
       &:active,
       &:hover {
-        color: #fff;
+        color: #fff !important;
       }
 
       &,
       &.header {
         .__background-stuff() !important;
-        color: #eee;
+        color: #eee !important;
 
         &:hover {
-          color: #fff;
+          color: #fff !important;
         }
 
         &.active {
           .__background-stuff();
-          color: #fff;
+          color: #fff !important;
           font-weight: bold;
 
           &:hover {
-            color: #fff;
-            font-weight: bold;
+            color: #fff !important;
+            font-weight: bold !important;
           }
         }
       }
@@ -223,5 +228,13 @@
   .ui.tabular.menu .item.active {
     border: 1px solid rgba(255, 255, 255, 0.6) !important;
     border-radius: 3px !important;
+  }
+}
+
+.ui.menu .ui.dropdown .menu>.item {
+  color: #ddd !important;
+
+  &:hover {
+    color: #fff !important;
   }
 }
