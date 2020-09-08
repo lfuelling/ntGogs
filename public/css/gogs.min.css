@@ -58,6 +58,29 @@ code.wrap {
   white-space: pre-wrap;
   word-break: break-word;
 }
+.ui.table,
+.ui.table thead th,
+.ui.table thead tr,
+.ui.label,
+#repo-files-table thead tr {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+table#repo-files-table thead tr th.invisible {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+}
+table#repo-files-table thead tr th:first-child {
+  border-right: none;
+}
+table#repo-files-table thead tr th:last-child {
+  border-left: none;
+}
 .dont-break-out {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
@@ -2635,6 +2658,27 @@ a:hover,
   color: #A7A7A7;
   text-decoration: underline;
 }
+.ui.message {
+  background: transparent !important;
+}
+.ui.message.positive,
+.ui.message.success,
+.ui.message.green {
+  color: #49aa49;
+}
+.ui.message.negative,
+.ui.message.error,
+.ui.message.red {
+  color: #c25558;
+}
+.ui.message.warning,
+.ui.message.orange {
+  color: #c28d55;
+}
+.ui.message.info,
+.ui.message.blue {
+  color: #5579c2;
+}
 .markdown:not(code) {
   overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
@@ -3352,6 +3396,9 @@ a:hover,
   font-weight: 400;
   font-size: 1.7rem;
 }
+.repository .head .ui.huge.breadcrumb .ui.mini.spaced.image {
+  margin-right: 16px;
+}
 .repository .head .fork-flag {
   margin-left: 38px;
   margin-top: 3px;
@@ -3810,9 +3857,10 @@ a:hover,
   display: inline-block;
   padding: 3px 6px;
   font: 12px Consolas, Liberation Mono, Menlo, monospace;
-  color: rgba(0, 0, 0, 0.65);
-  background-color: rgba(209, 227, 237, 0.45);
-  border-radius: 3px;
+  color: #fff;
+  background-color: transparent;
+  border-color: #ddd;
+  border-radius: 1px;
 }
 .repository.file.editor .commit-form-wrapper .commit-form .quick-pull-choice .new-branch-name-input {
   position: relative;
@@ -4054,11 +4102,14 @@ a:hover,
 .repository.view.issue .comment-list .comment .ui.form .tab.segment {
   border: none;
   padding: 0;
-  padding-top: 10px;
 }
 .repository.view.issue .comment-list .comment .ui.form textarea {
+  padding-top: 10px;
   height: 200px;
   font-family: Consolas, Liberation Mono, Menlo, monospace;
+}
+.repository.view.issue .comment-list .comment .ui.form .ui.bottom.tab.segment.markdown {
+  padding-top: 10px;
 }
 .repository.view.issue .comment-list .comment .edit.buttons {
   margin-top: 10px;
@@ -4140,11 +4191,14 @@ a:hover,
 .repository .comment.form .content .tab.segment {
   border: none;
   padding: 0;
-  padding-top: 10px;
 }
 .repository .comment.form .content textarea {
+  padding-top: 10px;
   height: 200px;
   font-family: Consolas, Liberation Mono, Menlo, monospace;
+}
+.repository .comment.form .content .ui.bottom.tab.segment.markdown {
+  padding-top: 10px;
 }
 .repository .label.list {
   list-style: none;
@@ -4688,7 +4742,10 @@ a:hover,
 .issue.list > .item {
   padding-top: 15px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed #aaa;
+  border-bottom: 1px solid #aaa;
+}
+.issue.list > .item:first-child {
+  border-top: 1px solid #aaa;
 }
 .issue.list > .item .title {
   color: #444;
@@ -4701,18 +4758,18 @@ a:hover,
 }
 .issue.list > .item .comment {
   padding-right: 10px;
-  color: #666;
+  color: #fff;
 }
 .issue.list > .item .desc {
   padding-top: 5px;
-  color: #999;
+  color: #eee;
 }
 .issue.list > .item .desc a.milestone {
   padding-left: 5px;
-  color: #999 !important;
+  color: #fff !important;
 }
 .issue.list > .item .desc a.milestone:hover {
-  color: #000 !important;
+  color: #aaa !important;
 }
 .issue.list > .item .desc .assignee {
   margin-top: -5px;
@@ -4943,8 +5000,35 @@ a:hover,
   tab-size: 16 !important;
   -moz-tab-size: 16 !important;
 }
+.ui .editor-toolbar {
+  border-color: #ddd;
+  opacity: 1;
+}
+.ui .editor-toolbar a,
+.ui .editor-toolbar a.active {
+  color: #fff !important;
+}
+.ui .editor-toolbar a:hover,
+.ui .editor-toolbar a.active:hover {
+  background-color: transparent !important;
+}
 .CodeMirror {
+  background-color: transparent;
   font: 14px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #fff;
+}
+.CodeMirror .CodeMirror-cursor {
+  border-left: 1px solid silver;
+  border-right: none;
+  width: 0;
+}
+.CodeMirror .CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.CodeMirror .cm-fat-cursor .CodeMirror-cursor {
+  width: auto;
+  border: 0 !important;
+  background: silver;
 }
 .CodeMirror.cm-s-default {
   border-radius: 3px;

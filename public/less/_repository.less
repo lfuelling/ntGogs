@@ -26,6 +26,10 @@
     .ui.huge.breadcrumb {
       font-weight: 400;
       font-size: 1.7rem;
+
+      .ui.mini.spaced.image {
+        margin-right: 16px;
+      }
     }
 
     .fork-flag {
@@ -593,9 +597,10 @@
             display: inline-block;
             padding: 3px 6px;
             font: 12px Consolas, Liberation Mono, Menlo, monospace;
-            color: rgba(0, 0, 0, 0.65);
-            background-color: rgba(209, 227, 237, 0.45);
-            border-radius: 3px;
+            color: #fff;
+            background-color: transparent;
+            border-color: #ddd;
+            border-radius: 1px;
           }
 
           .new-branch-name-input {
@@ -870,12 +875,16 @@
           .tab.segment {
             border: none;
             padding: 0;
-            padding-top: 10px;
           }
 
           textarea {
+            padding-top: 10px;
             height: 200px;
             font-family: Consolas, Liberation Mono, Menlo, monospace;
+          }
+
+          .ui.bottom.tab.segment.markdown {
+            padding-top: 10px;
           }
         }
 
@@ -964,12 +973,16 @@
       .tab.segment {
         border: none;
         padding: 0;
-        padding-top: 10px;
       }
 
       textarea {
+        padding-top: 10px;
         height: 200px;
         font-family: Consolas, Liberation Mono, Menlo, monospace;
+      }
+
+      .ui.bottom.tab.segment.markdown {
+        padding-top: 10px;
       }
     }
   }
@@ -1724,7 +1737,11 @@
   > .item {
     padding-top: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px dashed #aaa;
+    border-bottom: 1px solid #aaa;
+
+    &:first-child {
+      border-top: 1px solid #aaa;
+    }
 
     .title {
       color: #444;
@@ -1739,19 +1756,19 @@
 
     .comment {
       padding-right: 10px;
-      color: #666;
+      color: #fff;
     }
 
     .desc {
       padding-top: 5px;
-      color: #999;
+      color: #eee;
 
       a.milestone {
         padding-left: 5px;
-        color: #999 !important;
+        color: #fff !important;
 
         &:hover {
-          color: #000 !important;
+          color: #aaa !important;
         }
       }
 

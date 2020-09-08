@@ -1,10 +1,44 @@
+.ui .editor-toolbar {
+  border-color: #ddd;
+  opacity: 1;
+
+  a,
+  a.active {
+    color: #fff !important;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+}
+
 .CodeMirror {
-	font: 14px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-	&.cm-s-default {
-		  border-radius: 3px;
-		  padding: 0 !important;
-	}
-	.cm-comment {
-		background: inherit !important;
-	}
+  background-color: transparent;
+  font: 14px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #fff;
+
+  .CodeMirror-cursor {
+    border-left: 1px solid silver;
+    border-right: none;
+    width: 0;
+  }
+
+  .CodeMirror div.CodeMirror-secondarycursor {
+    border-left: 1px solid silver;
+  }
+
+  .cm-fat-cursor .CodeMirror-cursor {
+    width: auto;
+    border: 0 !important;
+    background: silver;
+  }
+
+  &.cm-s-default {
+    border-radius: 3px;
+    padding: 0 !important;
+  }
+
+  .cm-comment {
+    background: inherit !important;
+  }
 }
