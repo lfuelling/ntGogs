@@ -229,6 +229,6 @@
   };
 
   document.addEventListener('DOMContentLoaded', function() {
-    Window.starfield({ starDensity: 1.5 }, document.querySelector('body'));
+    Window.starfield({ starDensity: 3.5 }, document.querySelector('body'));
   });
 })();

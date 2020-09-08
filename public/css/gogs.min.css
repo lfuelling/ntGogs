@@ -190,13 +190,13 @@ code.wrap {
   color: #000;
 }
 .ui .text.grey {
-  color: #767676 !important;
+  color: #B7B7B7 !important;
 }
 .ui .text.grey a {
-  color: #444 !important;
+  color: #fff !important;
 }
 .ui .text.grey a:hover {
-  color: #000 !important;
+  color: #A7A7A7 !important;
 }
 .ui .text.light.grey {
   color: #888 !important;
@@ -2625,8 +2625,15 @@ i.dropdown.icon {
 }
 .ui.menu .ui.dropdown .menu > .active.item,
 .ui.card > .content > .header,
-.ui.cards > .card > .content > .header {
+.ui.cards > .card > .content > .header,
+.ui.breadcrumb a,
+a {
   color: #fff !important;
+}
+a:hover,
+.ui.breadcrumb a:hover {
+  color: #A7A7A7;
+  text-decoration: underline;
 }
 .markdown:not(code) {
   overflow: hidden;
@@ -3382,10 +3389,10 @@ i.dropdown.icon {
   margin: 2px 0;
 }
 .repository .metas .ui.list a .text {
-  color: #444;
+  color: #fff;
 }
 .repository .metas .ui.list a .text:hover {
-  color: #000;
+  color: #7D7D7D;
 }
 .repository .header-wrapper {
   background: transparent !important;
@@ -4020,7 +4027,7 @@ i.dropdown.icon {
   border: solid 1px #eee;
   border-radius: 3px;
   max-width: 150px;
-  background-color: #fff;
+  background-color: transparent;
 }
 .repository.view.issue .comment-list .comment .content > .bottom.segment a:before {
   content: " ";
@@ -4152,10 +4159,10 @@ i.dropdown.icon {
   font-size: 15px;
   padding-top: 5px;
   padding-right: 10px;
-  color: #666;
+  color: #fff;
 }
 .repository .label.list > .item a:hover {
-  color: #000;
+  color: #A7A7A7;
 }
 .repository .label.list > .item a.open-issues {
   margin-right: 30px;
@@ -4175,7 +4182,7 @@ i.dropdown.icon {
 .repository .milestone.list > .item > a {
   padding-top: 5px;
   padding-right: 10px;
-  color: #000;
+  color: #fff;
 }
 .repository .milestone.list > .item > a:hover {
   color: #4078c0;
@@ -4206,10 +4213,10 @@ i.dropdown.icon {
   font-size: 15px;
   padding-top: 5px;
   padding-right: 10px;
-  color: #666;
+  color: #fff;
 }
 .repository .milestone.list > .item .operate > a:hover {
-  color: #000;
+  color: #A7A7A7;
 }
 .repository .milestone.list > .item .content {
   padding-top: 10px;
@@ -5411,7 +5418,7 @@ i.dropdown.icon {
   margin-left: 5px;
 }
 .ui.user.list .item .description a {
-  color: #333;
+  color: #fff;
 }
 .ui.user.list .item .description a:hover {
   text-decoration: underline;

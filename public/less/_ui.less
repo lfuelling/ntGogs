@@ -280,6 +280,16 @@ i.dropdown.icon {
 }
 
 .ui.menu .ui.dropdown .menu>.active.item,
-.ui.card>.content>.header, .ui.cards>.card>.content>.header {
+.ui.card>.content>.header, .ui.cards>.card>.content>.header,
+.ui.breadcrumb a,
+a {
   color: #fff !important;
+}
+
+a,
+.ui.breadcrumb a {
+  &:hover {
+    color: #A7A7A7;
+    text-decoration: underline;
+  }
 }
