@@ -318,6 +318,9 @@ table#repo-files-table thead tr th:last-child {
   font-weight: normal;
   margin: 0 6px;
 }
+.ui .sha.label:hover {
+  background-color: transparent;
+}
 .ui.status.buttons .octicon {
   margin-right: 4px;
 }
@@ -2904,11 +2907,11 @@ a:hover,
   border: 1px solid #ddd !important;
 }
 .markdown:not(code) table tr {
-  background-color: #fff;
+  background-color: transparent;
   border-top: 1px solid #ccc;
 }
 .markdown:not(code) table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .markdown:not(code) img {
   max-width: 100%;
@@ -4437,41 +4440,41 @@ a:hover,
   width: 50%;
 }
 .repository .diff-file-box .code-diff tbody tr.same-code td.active {
-  background-color: #ffffdd !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 .repository .diff-file-box .code-diff tbody tr.del-code td.add-code {
-  background-color: #eaffea !important;
+  background-color: rgba(55, 255, 55, 0.25) !important;
   border-color: #c1e9c1 !important;
 }
 .repository .diff-file-box .code-diff tbody tr.del-code td.add-code pre {
-  background-color: #eaffea !important;
+  background-color: rgba(15, 255, 15, 0.16) !important;
   border-color: #c1e9c1 !important;
 }
 .repository .diff-file-box .code-diff tbody tr.del-code td {
-  background-color: #ffecec !important;
+  background-color: rgba(255, 31, 31, 0.21) !important;
   border-color: #f1c0c0 !important;
 }
 .repository .diff-file-box .code-diff tbody tr.del-code td.active {
-  background-color: #ffffdd !important;
+  background-color: rgba(255, 255, 53, 0.29) !important;
 }
 .repository .diff-file-box .code-diff tbody tr.del-code td.halfwidth {
   width: 50%;
 }
 .repository .diff-file-box .code-diff tbody tr.add-code td {
-  background-color: #eaffea !important;
+  background-color: rgba(79, 248, 79, 0.24) !important;
   border-color: #c1e9c1 !important;
 }
 .repository .diff-file-box .code-diff tbody tr.add-code td.halfwidth {
   width: 50%;
 }
 .repository .diff-file-box .code-diff tbody tr.add-code td.active {
-  background-color: #ffffdd !important;
+  background-color: rgba(253, 253, 68, 0.25) !important;
 }
 .repository .diff-file-box .code-diff tbody tr .removed-code {
-  background-color: #ff9999;
+  background-color: rgba(255, 19, 19, 0.2);
 }
 .repository .diff-file-box .code-diff tbody tr .added-code {
-  background-color: #99ff99;
+  background-color: rgba(41, 253, 41, 0.15);
 }
 .repository .diff-file-box.file-content img {
   max-width: 100%;
@@ -4494,6 +4497,7 @@ a:hover,
 }
 .repository.quickstart .guide .clone.button:first-child {
   border-radius: 0.28571429rem 0 0 0.28571429rem;
+  /* DAFUQ */
 }
 .repository.quickstart .guide .ui.action.small.input {
   width: 100%;
