@@ -2910,7 +2910,7 @@ a:hover,
   background-color: transparent;
   border-top: 1px solid #ccc;
 }
-.markdown:not(code) table tr:nth-child(2n) {
+.markdown:not(code) table tr th {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .markdown:not(code) img {
