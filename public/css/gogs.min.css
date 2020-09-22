@@ -4062,7 +4062,7 @@ a:hover,
   font-style: italic;
 }
 .repository.view.issue .comment-list .comment .content > .bottom.segment {
-  background: #f3f4f5;
+  background: rgba(255, 255, 255, 0.1);
 }
 .repository.view.issue .comment-list .comment .content > .bottom.segment .ui.images::after {
   clear: both;
@@ -4392,7 +4392,7 @@ a:hover,
 .repository .diff-file-box .file-body.file-code .lines-num {
   text-align: right;
   color: #a7a7a7;
-  background: #fafafa;
+  background: transparent;
   width: 1%;
 }
 .repository .diff-file-box .file-body.file-code .lines-num span.fold {
@@ -4874,7 +4874,7 @@ a:hover,
 }
 .ui.vertical.menu .header.item {
   font-size: 1.1em;
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
 }
 .edit-label.modal .form .column,
 .new-label.segment .form .column {
