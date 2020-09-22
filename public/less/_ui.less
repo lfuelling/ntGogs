@@ -1,0 +1,318 @@
+.__background-stuff {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.__error-stuff {
+  .__background-stuff();
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #9f3a38;
+}
+
+.ui {
+  &.card,
+  &.cards > .card {
+    .__background-stuff();
+
+    &,
+    &> .extra a {
+      color: #fff !important;
+    }
+  }
+
+  .text.black {
+    color: #fff !important;
+  }
+
+  &.segment,
+  &.menu,
+  &.menu.secondary,
+  &.menu.dropdown,
+  &.menu.vertical {
+    .__background-stuff();
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
+
+  &.dropdown,
+  &.selection.dropdown,
+  &.fluid.dropdown,
+  &.fluid.selection.dropdown,
+  &.menu,
+  &.menu.secondary,
+  &.menu.tabular,
+  &.menu.dropdown,
+  &.menu.link,
+  &.menu.vertical {
+
+    .item,
+    a.item,
+    & > .item,
+    & > a.item {
+      color: #ddd !important;
+
+      &:active,
+      &:hover,
+      &.active {
+        color: #fff !important;
+      }
+
+      &,
+      &.header {
+        .__background-stuff() !important;
+        color: #eee !important;
+
+        &:hover {
+          color: #fff !important;
+        }
+
+        &.active {
+          .__background-stuff();
+          color: #fff !important;
+          font-weight: bold;
+
+          &:hover {
+            color: #fff !important;
+            font-weight: bold !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.form,
+  &.input,
+  &.selection {
+    &,
+    .inline {
+      &,
+      &.field,
+      &.fields {
+        input,
+        select,
+        textarea,
+        .dropdown,
+        input:not([type]),
+        input[type=date],
+        input[type=datetime-local],
+        input[type=email],
+        input[type=file],
+        input[type=number],
+        input[type=password],
+        input[type=search],
+        input[type=tel],
+        input[type=text],
+        input[type=time],
+        input[type=url] {
+          .__background-stuff();
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          color: #fff;
+
+          &:hover {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+          }
+
+          &:focus {
+            .__background-stuff();
+            color: #fff;
+          }
+        }
+
+        &.error {
+          input,
+          select,
+          textarea,
+          .dropdown,
+          input:not([type]),
+          input[type=date],
+          input[type=datetime-local],
+          input[type=email],
+          input[type=file],
+          input[type=number],
+          input[type=password],
+          input[type=search],
+          input[type=tel],
+          input[type=text],
+          input[type=time],
+          input[type=url] {
+            .__error-stuff();
+
+            &:focus {
+              .__error-stuff();
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.button,
+  &.buttons .button,
+  &.basic.button,
+  &.basic.buttons .button {
+    .__background-stuff() !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #eee !important;
+
+    &:hover {
+      .__background-stuff() !important;
+      border: 1px solid rgba(255, 255, 255, 0.6) !important;
+      color: #fff !important;
+    }
+  }
+
+  &.green.button,
+  &.green.buttons .button {
+    .__background-stuff();
+    border-color: rgba(0, 255, 0, 0.3);
+
+    &:hover {
+      .__background-stuff();
+      border-color: rgba(0, 255, 0, 0.6);
+    }
+  }
+
+  &.selection.visible.dropdown > .text:not(.default),
+  &.dropdown .menu > .item,
+  &.dropdown .menu .selected.item,
+  &.dropdown .menu .active.item,
+  &.selection.dropdown .menu > .item,
+  &.selection.dropdown .menu .selected.item,
+  &.selection.dropdown .menu .active.item,
+  &.menu .dropdown .menu > .item {
+    &:hover {
+      color: #fff !important;
+    }
+
+    color: #ddd !important;
+  }
+
+  &.menu .dropdown .menu > .item:hover,
+  &.header {
+    color: #fff !important;
+  }
+
+  &.dropdown .menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
+
+  &.negative.message {
+    .__error-stuff();
+  }
+
+  &.breadcrumb .divider,
+  &.table thead th,
+  &.table tr td {
+    color: #fff !important;
+  }
+
+  &.selection.dropdown {
+    .__background-stuff();
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #fff !important;
+  }
+
+  &.attached.segment {
+    position: relative;
+    z-index: 8 !important;
+  }
+
+}
+
+i.dropdown.icon {
+  border: none !important;
+}
+
+.ui.basic.label,
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre {
+  .__background-stuff() !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.following.bar .top.menu a.item:hover {
+  color: #fff !important;
+}
+
+.dashboard {
+  position: relative;
+}
+
+.following.bar {
+  position: relative;
+}
+
+.following.bar .top.menu .menu {
+  .__background-stuff();
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff !important;
+
+  .item {
+    color: #fff !important;
+  }
+}
+
+.header-wrapper {
+  .ui.tabular.menu.navbar {
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 3px !important;
+  }
+
+  .ui.tabular.menu .item.active {
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 3px !important;
+  }
+}
+
+.ui.menu .ui.dropdown .menu > .item {
+  color: #ddd !important;
+
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+.ui.menu .ui.dropdown .menu>.active.item,
+.ui.card>.content>.header, .ui.cards>.card>.content>.header,
+.ui.breadcrumb a,
+a {
+  color: #fff !important;
+}
+
+a,
+.ui.breadcrumb a {
+  &:hover {
+    color: #A7A7A7;
+    text-decoration: underline;
+  }
+}
+
+.ui.message {
+  background: transparent !important;
+
+  &.positive,
+  &.success,
+  &.green {
+    color: #49aa49;
+  }
+  &.negative,
+  &.error,
+  &.red {
+    color: #c25558;
+  }
+  &.warning,
+  &.orange {
+    color: #c28d55;
+  }
+  &.info,
+  &.blue {
+    color: #5579c2;
+  }
+}

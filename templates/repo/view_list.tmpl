@@ -12,8 +12,7 @@
 				<a rel="nofollow" class="ui sha label" href="{{.RepoLink}}/commit/{{.LatestCommit.ID}}" rel="nofollow">{{ShortSHA1 .LatestCommit.ID.String}}</a>
 				<span class="grey has-emoji">{{RenderCommitMessage false .LatestCommit.Summary .RepoLink $.Repository.ComposeMetas | Str2HTML}}</span>
 			</th>
-			<th class="nine wide">
-			</th>
+			<th class="nine wide invisible"></th>
 			<th class="three wide text grey right age">{{TimeSince .LatestCommit.Author.When $.Lang}}</th>
 		</tr>
 	</thead>
