@@ -240,7 +240,7 @@ func adminAuthEditTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "admin/auth/edit.tmpl", size: 10554, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "admin/auth/edit.tmpl", size: 10554, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -680,7 +680,7 @@ func exploreRepo_listTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "explore/repo_list.tmpl", size: 1442, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "explore/repo_list.tmpl", size: 1442, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -760,7 +760,7 @@ func homeTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "home.tmpl", size: 1394, mode: os.FileMode(420), modTime: time.Unix(1600805893, 0)}
+	info := bindataFileInfo{name: "home.tmpl", size: 1394, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -820,7 +820,7 @@ func installTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "install.tmpl", size: 14405, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "install.tmpl", size: 14405, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1420,7 +1420,7 @@ func repoCreateTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "repo/create.tmpl", size: 4849, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "repo/create.tmpl", size: 4849, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1620,7 +1620,7 @@ func repoHeaderTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "repo/header.tmpl", size: 4695, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "repo/header.tmpl", size: 4695, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1900,7 +1900,7 @@ func repoMigrateTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "repo/migrate.tmpl", size: 4435, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "repo/migrate.tmpl", size: 4435, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1980,7 +1980,7 @@ func repoPullsForkTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "repo/pulls/fork.tmpl", size: 2868, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "repo/pulls/fork.tmpl", size: 2868, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2180,7 +2180,7 @@ func repoSettingsOptionsTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "repo/settings/options.tmpl", size: 19077, mode: os.FileMode(420), modTime: time.Unix(1600805632, 0)}
+	info := bindataFileInfo{name: "repo/settings/options.tmpl", size: 19077, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2460,7 +2460,7 @@ func repoView_listTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "repo/view_list.tmpl", size: 2266, mode: os.FileMode(420), modTime: time.Unix(1600805678, 0)}
+	info := bindataFileInfo{name: "repo/view_list.tmpl", size: 2266, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
