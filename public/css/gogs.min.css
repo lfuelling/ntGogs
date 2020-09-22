@@ -4431,7 +4431,7 @@ a:hover,
   color: #383636;
 }
 .repository .diff-file-box .code-diff tbody tr.tag-code td {
-  background-color: #f0f0f0 !important;
+  background-color: transparent !important;
   border-color: #d2cece !important;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4618,7 +4618,7 @@ a:hover,
   background: inherit;
 }
 .repository.wiki.new .editor-preview {
-  background-color: white;
+  background-color: transparent;
 }
 .repository.wiki.view .choose.page {
   margin-top: -5px;
