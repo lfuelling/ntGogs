@@ -3738,7 +3738,7 @@ a:hover,
 .repository.file.list #file-content .plain-text {
   font-size: 14px;
   padding: 15px 15px 10px 15px;
-  font-family: Consolas;
+  font-family: "Fira Code", Consolas, monospace;
 }
 .repository.file.list #file-content .code-view * {
   font-size: 12px;
@@ -3755,7 +3755,7 @@ a:hover,
   vertical-align: top;
   text-align: right;
   color: #999;
-  background: #f5f5f5;
+  background: rgba(255, 255, 255, 0.2);
   width: 42px;
 }
 .repository.file.list #file-content .code-view .lines-num span {
@@ -3775,7 +3775,7 @@ a:hover,
 .repository.file.list #file-content .code-view .lines-code ol,
 .repository.file.list #file-content .code-view .lines-num .hljs,
 .repository.file.list #file-content .code-view .lines-code .hljs {
-  background-color: white;
+  background-color: transparent;
   margin: 0;
   padding: 0 !important;
 }
@@ -3795,7 +3795,7 @@ a:hover,
 .repository.file.list #file-content .code-view .lines-code ol li.active,
 .repository.file.list #file-content .code-view .lines-num .hljs li.active,
 .repository.file.list #file-content .code-view .lines-code .hljs li.active {
-  background: #ffffdd;
+  background: rgba(255, 255, 255, 0.1);
 }
 .repository.file.list .sidebar {
   padding-left: 0;
@@ -5398,6 +5398,10 @@ a:hover,
 .admin .table.segment {
   padding: 0;
   font-size: 13px;
+}
+.admin .table.segment:nth-child(3) {
+  z-index: 300000000000 !important;
+  /* Prevent dropdown from being hidden */
 }
 .admin .table.segment:not(.striped) {
   padding-top: 5px;
