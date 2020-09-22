@@ -408,6 +408,7 @@ func (issue *Issue) ReadBy(uid int64) error {
 }
 
 func updateIssueCols(e Engine, issue *Issue, cols ...string) error {
+	cols = append(cols, "updated_unix")
 	_, err := e.ID(issue.ID).Cols(cols...).Update(issue)
 	return err
 }
@@ -1173,7 +1174,7 @@ func updateIssueMentions(e Engine, issueID int64, mentions []string) error {
 		}
 
 		memberIDs := make([]int64, 0, user.NumMembers)
-		orgUsers, err := getOrgUsersByOrgID(e, user.ID)
+		orgUsers, err := getOrgUsersByOrgID(e, user.ID, 0)
 		if err != nil {
 			return fmt.Errorf("getOrgUsersByOrgID [%d]: %v", user.ID, err)
 		}

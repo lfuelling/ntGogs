@@ -5,6 +5,7 @@
 package osutil
 
 import (
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -80,6 +81,14 @@ func TestIsExist(t *testing.T) {
 }
 
 func TestCurrentUsername(t *testing.T) {
-	// Make sure it does not blow up
-	CurrentUsername()
+	if oldUser, ok := os.LookupEnv("USER"); ok {
+		defer func() { _ = os.Setenv("USER", oldUser) }()
+	} else {
+		defer func() { _ = os.Unsetenv("USER") }()
+	}
+
+	if err := os.Setenv("USER", "__TESTING::USERNAME"); err != nil {
+		t.Skip("Could not set the USER environment variable:", err)
+	}
+	assert.Equal(t, "__TESTING::USERNAME", CurrentUsername())
 }
