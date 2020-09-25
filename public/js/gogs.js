@@ -1,15 +1,15 @@
 "use strict";
 
-var csrf;
-var suburl;
+let csrf;
+let suburl;
 
 function initCommentPreviewTab($form) {
-  var $tabMenu = $form.find(".tabular.menu");
+  const $tabMenu = $form.find(".tabular.menu");
   $tabMenu.find(".item").tab();
   $tabMenu
     .find('.item[data-tab="' + $tabMenu.data("preview") + '"]')
     .click(function () {
-      var $this = $(this);
+      const $this = $(this);
       $.post(
         $this.data("url"),
         {
@@ -23,7 +23,7 @@ function initCommentPreviewTab($form) {
             .val()
         },
         function (data) {
-          var $previewPanel = $form.find(
+          const $previewPanel = $form.find(
             '.tab.segment[data-tab="' + $tabMenu.data("preview") + '"]'
           );
           $previewPanel.html(data);
@@ -38,18 +38,18 @@ function initCommentPreviewTab($form) {
   buttonsClickOnEnter();
 }
 
-var previewFileModes;
+let previewFileModes;
 
 function initEditPreviewTab($form) {
-  var $tabMenu = $form.find(".tabular.menu");
+  const $tabMenu = $form.find(".tabular.menu");
   $tabMenu.find(".item").tab();
-  var $previewTab = $tabMenu.find(
+  const $previewTab = $tabMenu.find(
     '.item[data-tab="' + $tabMenu.data("preview") + '"]'
   );
   if ($previewTab.length) {
     previewFileModes = $previewTab.data("preview-file-modes").split(",");
     $previewTab.click(function () {
-      var $this = $(this);
+      const $this = $(this);
       $.post(
         $this.data("url"),
         {
@@ -62,7 +62,7 @@ function initEditPreviewTab($form) {
             .val()
         },
         function (data) {
-          var $previewPanel = $form.find(
+          const $previewPanel = $form.find(
             '.tab.segment[data-tab="' + $tabMenu.data("preview") + '"]'
           );
           $previewPanel.html(data);
@@ -77,12 +77,12 @@ function initEditPreviewTab($form) {
 }
 
 function initEditDiffTab($form) {
-  var $tabMenu = $form.find(".tabular.menu");
+  const $tabMenu = $form.find(".tabular.menu");
   $tabMenu.find(".item").tab();
   $tabMenu
     .find('.item[data-tab="' + $tabMenu.data("diff") + '"]')
     .click(function () {
-      var $this = $(this);
+      const $this = $(this);
       $.post(
         $this.data("url"),
         {
@@ -94,7 +94,7 @@ function initEditDiffTab($form) {
             .val()
         },
         function (data) {
-          var $diffPreviewPanel = $form.find(
+          const $diffPreviewPanel = $form.find(
             '.tab.segment[data-tab="' + $tabMenu.data("diff") + '"]'
           );
           $diffPreviewPanel.html(data);
@@ -105,7 +105,7 @@ function initEditDiffTab($form) {
 }
 
 function initEditForm() {
-  if ($(".edit.form").length == 0) {
+  if ($(".edit.form").length === 0) {
     return;
   }
 
@@ -114,17 +114,17 @@ function initEditForm() {
 }
 
 function initCommentForm() {
-  if ($(".comment.form").length == 0) {
+  if ($(".comment.form").length === 0) {
     return;
   }
 
   initCommentPreviewTab($(".comment.form"));
 
   // Labels
-  var $list = $(".ui.labels.list");
-  var $noSelect = $list.find(".no-select");
-  var $labelMenu = $(".select-label .menu");
-  var hasLabelUpdateAction = $labelMenu.data("action") == "update";
+  const $list = $(".ui.labels.list");
+  const $noSelect = $list.find(".no-select");
+  const $labelMenu = $(".select-label .menu");
+  const hasLabelUpdateAction = $labelMenu.data("action") === "update";
 
   function updateIssueMeta(url, action, id) {
     $.post(url, {
@@ -170,7 +170,7 @@ function initCommentForm() {
       }
     }
 
-    var labelIds = "";
+    let labelIds = "";
     $(this)
       .parent()
       .find(".item")
@@ -182,7 +182,7 @@ function initCommentForm() {
           $($(this).data("id-selector")).addClass("hide");
         }
       });
-    if (labelIds.length == 0) {
+    if (labelIds.length === 0) {
       $noSelect.removeClass("hide");
     } else {
       $noSelect.addClass("hide");
@@ -222,9 +222,9 @@ function initCommentForm() {
   });
 
   function selectItem(select_id, input_id) {
-    var $menu = $(select_id + " .menu");
-    var $list = $(".ui" + select_id + ".list");
-    var hasUpdateAction = $menu.data("action") == "update";
+    const $menu = $(select_id + " .menu");
+    const $list = $(".ui" + select_id + ".list");
+    const hasUpdateAction = $menu.data("action") === "update";
 
     $menu.find(".item:not(.no-select)").click(function () {
       $(this)
@@ -291,12 +291,12 @@ function initCommentForm() {
 }
 
 function initRepository() {
-  if ($(".repository").length == 0) {
+  if ($(".repository").length === 0) {
     return;
   }
 
   function initFilterSearchDropdown(selector) {
-    var $dropdown = $(selector);
+    const $dropdown = $(selector);
     $dropdown.dropdown({
       fullTextSearch: true,
       onChange: function (text, value, $choice) {
@@ -333,12 +333,12 @@ function initRepository() {
   // Options
   if ($(".repository.settings.options").length > 0) {
     $("#repo_name").keyup(function () {
-      var $prompt = $("#repo-name-change-prompt");
+      const $prompt = $("#repo-name-change-prompt");
       if (
         $(this)
           .val()
           .toString()
-          .toLowerCase() !=
+          .toLowerCase() !==
         $(this)
           .data("repo-name")
           .toString()
@@ -366,7 +366,7 @@ function initRepository() {
   // Labels
   if ($(".repository.labels").length > 0) {
     // Create label
-    var $newLabelPanel = $(".new-label.segment");
+    const $newLabelPanel = $(".new-label.segment");
     $(".new-label.button").click(function () {
       $newLabelPanel.show();
     });
@@ -378,7 +378,7 @@ function initRepository() {
       $(this).minicolors();
     });
     $(".precolors .color").click(function () {
-      var color_hex = $(this).data("color-hex");
+      const color_hex = $(this).data("color-hex");
       $(".color-picker").val(color_hex);
       $(".minicolors-swatch-color").css("background-color", color_hex);
     });
@@ -405,7 +405,7 @@ function initRepository() {
   if ($(".repository.milestones").length > 0) {
   }
   if ($(".repository.new.milestone").length > 0) {
-    var $datepicker = $(".milestone.datepicker");
+    const $datepicker = $(".milestone.datepicker");
     $datepicker.datetimepicker({
       lang: $datepicker.data("lang"),
       inline: true,
@@ -426,9 +426,9 @@ function initRepository() {
   // Issues
   if ($(".repository.view.issue").length > 0) {
     // Edit issue title
-    var $issueTitle = $("#issue-title");
-    var $editInput = $("#edit-title-input").find("input");
-    var editTitleToggle = function () {
+    const $issueTitle = $("#issue-title");
+    const $editInput = $("#edit-title-input").find("input");
+    const editTitleToggle = function () {
       $issueTitle.toggle();
       $(".not-in-edit").toggle();
       $("#edit-title-input").toggle();
@@ -442,8 +442,8 @@ function initRepository() {
       .click(editTitleToggle)
       .click(function () {
         if (
-          $editInput.val().length == 0 ||
-          $editInput.val() == $issueTitle.text()
+          $editInput.val().length === 0 ||
+          $editInput.val() === $issueTitle.text()
         ) {
           $editInput.val($issueTitle.text());
           return false;
@@ -465,24 +465,24 @@ function initRepository() {
 
     // Edit issue or comment content
     $(".edit-content").click(function () {
-      var $segment = $(this)
+      const $segment = $(this)
         .parent()
         .parent()
         .parent()
         .next();
-      var $editContentZone = $segment.find(".edit-content-zone");
-      var $renderContent = $segment.find(".render-content");
-      var $rawContent = $segment.find(".raw-content");
-      var $textarea;
+      const $editContentZone = $segment.find(".edit-content-zone");
+      const $renderContent = $segment.find(".render-content");
+      const $rawContent = $segment.find(".raw-content");
+      let $textarea;
 
       // Setup new form
-      if ($editContentZone.html().length == 0) {
+      if ($editContentZone.html().length === 0) {
         $editContentZone.html($("#edit-content-form").html());
         $textarea = $segment.find("textarea");
 
         // Give new write/preview data-tab name to distinguish from others
-        var $editContentForm = $editContentZone.find(".ui.comment.form");
-        var $tabMenu = $editContentForm.find(".tabular.menu");
+        const $editContentForm = $editContentZone.find(".ui.comment.form");
+        const $tabMenu = $editContentForm.find(".tabular.menu");
         $tabMenu.attr("data-write", $editContentZone.data("write"));
         $tabMenu.attr("data-preview", $editContentZone.data("preview"));
         $tabMenu
@@ -516,7 +516,7 @@ function initRepository() {
               context: $editContentZone.data("context")
             },
             function (data) {
-              if (data.length == 0) {
+              if (data.length === 0) {
                 $renderContent.html($("#no-content").html());
               } else {
                 $renderContent.html(data.content);
@@ -535,7 +535,7 @@ function initRepository() {
       // Show write/preview tab and copy raw content as needed
       $editContentZone.show();
       $renderContent.hide();
-      if ($textarea.val().length == 0) {
+      if ($textarea.val().length === 0) {
         $textarea.val($rawContent.text());
       }
       $textarea.focus();
@@ -544,7 +544,7 @@ function initRepository() {
 
     // Delete comment
     $(".delete-comment").click(function () {
-      var $this = $(this);
+      const $this = $(this);
       if (confirm($this.data("locale"))) {
         $.post($this.data("url"), {
           _csrf: csrf
@@ -556,9 +556,9 @@ function initRepository() {
     });
 
     // Change status
-    var $statusButton = $("#status-button");
+    const $statusButton = $("#status-button");
     $("#comment-form .edit_area").keyup(function () {
-      if ($(this).val().length == 0) {
+      if ($(this).val().length === 0) {
         $statusButton.text($statusButton.data("status"));
       } else {
         $statusButton.text($statusButton.data("status-and-comment"));
@@ -572,13 +572,13 @@ function initRepository() {
 
   // Diff
   if ($(".repository.diff").length > 0) {
-    var $counter = $(".diff-counter");
+    const $counter = $(".diff-counter");
     if ($counter.length >= 1) {
       $counter.each(function (i, item) {
-        var $item = $(item);
-        var addLine = $item.find("span[data-line].add").data("line");
-        var delLine = $item.find("span[data-line].del").data("line");
-        var addPercent =
+        const $item = $(item);
+        const addLine = $item.find("span[data-line].add").data("line");
+        const delLine = $item.find("span[data-line].del").data("line");
+        const addPercent =
           (parseFloat(addLine) / (parseFloat(addLine) + parseFloat(delLine))) *
           100;
         $item.find(".bar .add").css("width", addPercent + "%");
@@ -594,7 +594,7 @@ function initRepository() {
     $(window)
       .on("hashchange", function (e) {
         $(".diff-file-box .lines-code.active").removeClass("active");
-        var m = window.location.hash.match(/^#diff-.+$/);
+        const m = window.location.hash.match(/^#diff-.+$/);
         if (m) {
           $(m[0])
             .siblings(".lines-code")
@@ -639,7 +639,7 @@ function initRepository() {
 }
 
 function initWikiForm() {
-  var $editArea = $(".repository.wiki textarea#edit_area");
+  const $editArea = $(".repository.wiki textarea#edit_area");
   if ($editArea.length > 0) {
     new SimpleMDE({
       autoDownloadFontAwesome: false,
@@ -702,26 +702,26 @@ function initWikiForm() {
   }
 }
 
-var simpleMDEditor;
-var codeMirrorEditor;
+let simpleMDEditor;
+let codeMirrorEditor;
 
 // For IE
 String.prototype.endsWith = function (pattern) {
-  var d = this.length - pattern.length;
+  const d = this.length - pattern.length;
   return d >= 0 && this.lastIndexOf(pattern) === d;
 };
 
 // Adding function to get the cursor position in a text field to jQuery object.
 (function ($, undefined) {
   $.fn.getCursorPosition = function () {
-    var el = $(this).get(0);
-    var pos = 0;
+    const el = $(this).get(0);
+    let pos = 0;
     if ("selectionStart" in el) {
       pos = el.selectionStart;
     } else if ("selection" in document) {
       el.focus();
-      var Sel = document.selection.createRange();
-      var SelLength = document.selection.createRange().text.length;
+      const Sel = document.selection.createRange();
+      const SelLength = document.selection.createRange().text.length;
       Sel.moveStart("character", -el.value.length);
       pos = Sel.text.length - SelLength;
     }
@@ -822,7 +822,7 @@ function setCodeMirror($editArea) {
 
 function initEditor() {
   $(".js-quick-pull-choice-option").change(function () {
-    if ($(this).val() == "commit-to-new-branch") {
+    if ($(this).val() === "commit-to-new-branch") {
       $(".quick-pull-branch-name").show();
       $(".quick-pull-branch-name input").prop("required", true);
     } else {
@@ -831,15 +831,17 @@ function initEditor() {
     }
   });
 
-  var $editFilename = $("#file-name");
+  const $editFilename = $("#file-name");
   $editFilename
     .keyup(function (e) {
-      var $section = $(".breadcrumb span.section");
-      var $divider = $(".breadcrumb div.divider");
-      if (e.keyCode == 8) {
-        if ($(this).getCursorPosition() == 0) {
+      let value;
+      let parts;
+      const $section = $(".breadcrumb span.section");
+      const $divider = $(".breadcrumb div.divider");
+      if (e.keyCode === 8) {
+        if ($(this).getCursorPosition() === 0) {
           if ($section.length > 0) {
-            var value = $section
+            value = $section
               .last()
               .find("a")
               .text();
@@ -850,12 +852,12 @@ function initEditor() {
           }
         }
       }
-      if (e.keyCode == 191) {
-        var parts = $(this)
+      if (e.keyCode === 191) {
+        parts = $(this)
           .val()
           .split("/");
-        for (var i = 0; i < parts.length; ++i) {
-          var value = parts[i];
+        for (let i = 0; i < parts.length; ++i) {
+          value = parts[i];
           if (i < parts.length - 1) {
             if (value.length) {
               $(
@@ -869,7 +871,7 @@ function initEditor() {
           $(this)[0].setSelectionRange(0, 0);
         }
       }
-      var parts = [];
+      parts = [];
       $(".breadcrumb span.section").each(function (i, element) {
         element = $(element);
         if (element.find("a").length) {
@@ -882,26 +884,26 @@ function initEditor() {
         parts.push($(this).val());
       }
 
-      var tree_path = parts.join("/");
+      const tree_path = parts.join("/");
       $("#tree_path").val(tree_path);
-      $("#preview-tab").data(
-        "context",
-        $("#preview-tab").data("root-context") +
+      const previewTab = $("#preview-tab");
+      previewTab.data("context",
+        previewTab.data("root-context") +
         tree_path.substring(0, tree_path.lastIndexOf("/") + 1)
       );
     })
     .trigger("keyup");
 
-  var $editArea = $(".repository.editor textarea#edit_area");
+  const $editArea = $(".repository.editor textarea#edit_area");
   if (!$editArea.length) return;
 
-  var markdownFileExts = $editArea.data("markdown-file-exts").split(",");
-  var lineWrapExtensions = $editArea.data("line-wrap-extensions").split(",");
+  const markdownFileExts = $editArea.data("markdown-file-exts").split(",");
+  const lineWrapExtensions = $editArea.data("line-wrap-extensions").split(",");
 
   $editFilename
     .on("keyup", function (e) {
-      var val = $editFilename.val(),
-        m,
+      const val = $editFilename.val();
+      let m,
         mode,
         spec,
         extension,
@@ -915,7 +917,7 @@ function initEditor() {
         extWithDot = "." + extension;
       }
 
-      var info = CodeMirror.findModeByExtension(extension);
+      const info = CodeMirror.findModeByExtension(extension);
       previewLink = $("a[data-tab=preview]");
       if (info) {
         mode = info.mode;
@@ -965,7 +967,7 @@ function initEditor() {
       }
 
       // get the filename without any folder
-      var value = $editFilename.val();
+      let value = $editFilename.val();
       if (value.length === 0) {
         return;
       }
@@ -985,7 +987,7 @@ function initEditor() {
           // - https://codemirror.net/doc/manual.html#keymaps
           codeMirrorEditor.setOption("extraKeys", {
             Tab: function (cm) {
-              var spaces = Array(parseInt(cm.getOption("indentUnit")) + 1).join(
+              const spaces = Array(parseInt(cm.getOption("indentUnit")) + 1).join(
                 " "
               );
               cm.replaceSelection(spaces);
@@ -1000,19 +1002,19 @@ function initEditor() {
 }
 
 function initOrganization() {
-  if ($(".organization").length == 0) {
+  if ($(".organization").length === 0) {
     return;
   }
 
   // Options
   if ($(".organization.settings.options").length > 0) {
     $("#org_name").keyup(function () {
-      var $prompt = $("#org-name-change-prompt");
+      const $prompt = $("#org-name-change-prompt");
       if (
         $(this)
           .val()
           .toString()
-          .toLowerCase() !=
+          .toLowerCase() !==
         $(this)
           .data("org-name")
           .toString()
@@ -1027,7 +1029,7 @@ function initOrganization() {
 }
 
 function initAdmin() {
-  if ($(".admin").length == 0) {
+  if ($(".admin").length === 0) {
     return;
   }
 
@@ -1037,14 +1039,14 @@ function initAdmin() {
       if (
         $(this)
           .val()
-          .substring(0, 1) == "0"
+          .substring(0, 1) === "0"
       ) {
         $("#login_name").removeAttr("required");
         $(".non-local").hide();
         $(".local").show();
         $("#user_name").focus();
 
-        if ($(this).data("password") == "required") {
+        if ($(this).data("password") === "required") {
           $("#password").attr("required", "required");
         }
       } else {
@@ -1076,7 +1078,7 @@ function initAdmin() {
       $(".github").hide();
       $(".has-tls").hide();
 
-      var authType = $(this).val();
+      const authType = $(this).val();
       switch (authType) {
         case "2": // LDAP
           $(".ldap").show();
@@ -1097,7 +1099,7 @@ function initAdmin() {
           break;
       }
 
-      if (authType == "2" || authType == "5") {
+      if (authType === "2" || authType === "5") {
         onSecurityProtocolChange();
       }
     });
@@ -1106,14 +1108,14 @@ function initAdmin() {
   // Edit authentication
   if ($(".admin.edit.authentication").length > 0) {
     var authType = $("#auth_type").val();
-    if (authType == "2" || authType == "5") {
+    if (authType === "2" || authType === "5") {
       $("#security_protocol").change(onSecurityProtocolChange);
     }
   }
 
   // Notice
   if ($(".admin.notice")) {
-    var $detailModal = $("#detail-modal");
+    const $detailModal = $("#detail-modal");
 
     // Attach view detail modals
     $(".view-detail").click(function () {
@@ -1123,7 +1125,7 @@ function initAdmin() {
     });
 
     // Select actions
-    var $checkboxes = $(".select.table .ui.checkbox");
+    const $checkboxes = $(".select.table .ui.checkbox");
     $(".select.action").click(function () {
       switch ($(this).data("action")) {
         case "select-all":
@@ -1138,9 +1140,9 @@ function initAdmin() {
       }
     });
     $("#delete-selection").click(function () {
-      var $this = $(this);
+      const $this = $(this);
       $this.addClass("loading disabled");
-      var ids = [];
+      const ids = [];
       $checkboxes.each(function () {
         if ($(this).checkbox("is checked")) {
           ids.push($(this).data("id"));
@@ -1158,7 +1160,7 @@ function initAdmin() {
 
 function buttonsClickOnEnter() {
   $(".ui.button").keypress(function (e) {
-    if (e.keyCode == 13 || e.keyCode == 32)
+    if (e.keyCode === 13 || e.keyCode === 32)
       // enter key or space bar
       $(this).click();
   });
@@ -1166,7 +1168,7 @@ function buttonsClickOnEnter() {
 
 function hideWhenLostFocus(body, parent) {
   $(document).click(function (e) {
-    var target = e.target;
+    const target = e.target;
     if (
       !$(target).is(body) &&
       !$(target)
@@ -1183,11 +1185,11 @@ function searchUsers() {
     return;
   }
 
-  var $searchUserBox = $("#search-user-box");
-  var $results = $searchUserBox.find(".results");
+  const $searchUserBox = $("#search-user-box");
+  const $results = $searchUserBox.find(".results");
   $searchUserBox.keyup(function () {
-    var $this = $(this);
-    var keyword = $this.find("input").val();
+    const $this = $(this);
+    const keyword = $this.find("input").val();
     if (keyword.length < 2) {
       $results.hide();
       return;
@@ -1197,14 +1199,14 @@ function searchUsers() {
       url: suburl + "/api/v1/users/search?q=" + keyword,
       dataType: "json",
       success: function (response) {
-        var notEmpty = function (str) {
+        const notEmpty = function (str) {
           return str && str.length > 0;
         };
 
         $results.html("");
 
         if (response.ok && response.data.length) {
-          var html = "";
+          let html = "";
           $.each(response.data, function (i, item) {
             html +=
               '<div class="item"><img class="ui avatar image" src="' +
@@ -1245,11 +1247,11 @@ function searchRepositories() {
     return;
   }
 
-  var $searchRepoBox = $("#search-repo-box");
-  var $results = $searchRepoBox.find(".results");
+  const $searchRepoBox = $("#search-repo-box");
+  const $results = $searchRepoBox.find(".results");
   $searchRepoBox.keyup(function () {
-    var $this = $(this);
-    var keyword = $this.find("input").val();
+    const $this = $(this);
+    const keyword = $this.find("input").val();
     if (keyword.length < 2) {
       $results.hide();
       return;
@@ -1264,14 +1266,14 @@ function searchRepositories() {
         $searchRepoBox.data("uid"),
       dataType: "json",
       success: function (response) {
-        var notEmpty = function (str) {
+        const notEmpty = function (str) {
           return str && str.length > 0;
         };
 
         $results.html("");
 
         if (response.ok && response.data.length) {
-          var html = "";
+          let html = "";
           $.each(response.data, function (i, item) {
             html +=
               '<div class="item"><i class="octicon octicon-repo"></i> <span class="fullname">' +
@@ -1304,8 +1306,8 @@ function searchRepositories() {
 function initCodeView() {
   if ($(".code-view .linenums").length > 0) {
     $(document).on("click", ".lines-num span", function (e) {
-      var $select = $(this);
-      var $list = $select
+      const $select = $(this);
+      const $list = $select
         .parent()
         .siblings(".lines-code")
         .find("ol.linenums > li");
@@ -1319,9 +1321,9 @@ function initCodeView() {
 
     $(window)
       .on("hashchange", function (e) {
-        var m = window.location.hash.match(/^#(L\d+)\-(L\d+)$/);
-        var $list = $(".code-view ol.linenums > li");
-        var $first;
+        let m = window.location.hash.match(/^#(L\d+)\-(L\d+)$/);
+        const $list = $(".code-view ol.linenums > li");
+        let $first;
         if (m) {
           $first = $list.filter("." + m[1]);
           selectRange($list, $first, $list.filter("." + m[2]));
@@ -1345,12 +1347,12 @@ function initUserSettings() {
   // Options
   if ($(".user.settings.profile").length > 0) {
     $("#username").keyup(function () {
-      var $prompt = $("#name-change-prompt");
+      const $prompt = $("#name-change-prompt");
       if (
         $(this)
           .val()
           .toString()
-          .toLowerCase() !=
+          .toLowerCase() !==
         $(this)
           .data("name")
           .toString()
@@ -1369,7 +1371,7 @@ function initRepositoryCollaboration() {
 
   // Change collaborator access mode
   $(".access-mode.menu .item").click(function () {
-    var $menu = $(this).parent();
+    const $menu = $(this).parent();
     $.post($menu.data("url"), {
       _csrf: csrf,
       uid: $menu.data("uid"),
@@ -1393,7 +1395,7 @@ function initWebhookSettings() {
   // Highlight payload on first click
   $(".hook.history.list .toggle.button").click(function () {
     $($(this).data("target") + " .nohighlight").each(function () {
-      var $this = $(this);
+      const $this = $(this);
       $this.removeClass("nohighlight");
       setTimeout(function () {
         hljs.highlightBlock($this[0]);
@@ -1403,7 +1405,7 @@ function initWebhookSettings() {
 
   // Trigger delivery
   $(".delivery.button, .redelivery.button").click(function () {
-    var $this = $(this);
+    const $this = $(this);
     $this.addClass("loading disabled");
     $.post($this.data("link"), {
       _csrf: csrf
@@ -1470,9 +1472,9 @@ $(document).ready(function () {
   });
 
   // Dropzone
-  var $dropzone = $("#dropzone");
+  const $dropzone = $("#dropzone");
   if ($dropzone.length > 0) {
-    var filenameDict = {};
+    const filenameDict = {};
     $dropzone.dropzone({
       url: $dropzone.data("upload-url"),
       headers: {"X-CSRF-Token": csrf},
@@ -1488,7 +1490,7 @@ $(document).ready(function () {
       init: function () {
         this.on("success", function (file, data) {
           filenameDict[file.name] = data.uuid;
-          var input = $(
+          const input = $(
             '<input id="' + data.uuid + '" name="files" type="hidden">'
           ).val(data.uuid);
           $(".files").append(input);
@@ -1513,13 +1515,13 @@ $(document).ready(function () {
     img_dir: suburl + "/img/emoji",
     ignore_emoticons: true
   });
-  var hasEmoji = document.getElementsByClassName("has-emoji");
-  for (var i = 0; i < hasEmoji.length; i++) {
+  const hasEmoji = document.getElementsByClassName("has-emoji");
+  for (let i = 0; i < hasEmoji.length; i++) {
     emojify.run(hasEmoji[i]);
   }
 
   // Clipboard JS
-  var clipboard = new ClipboardJS(".clipboard");
+  const clipboard = new ClipboardJS(".clipboard");
   clipboard.on("success", function (e) {
     e.clearSelection();
 
@@ -1556,7 +1558,7 @@ $(document).ready(function () {
 
   // AJAX load buttons
   $(".ajax-load-button").click(function () {
-    var $this = $(this);
+    const $this = $(this);
     $this.addClass("disabled");
 
     $.ajax({
@@ -1568,7 +1570,7 @@ $(document).ready(function () {
       $(data).insertBefore($this);
 
       // Update new URL or remove self if no more feeds
-      var url = request.getResponseHeader("X-AJAX-URL");
+      const url = request.getResponseHeader("X-AJAX-URL");
       if (url) {
         $this.data("url", url);
         $this.removeClass("disabled");
@@ -1580,12 +1582,12 @@ $(document).ready(function () {
 
   // Helpers
   $(".delete-button").click(function () {
-    var $this = $(this);
+    const $this = $(this);
     $(".delete.modal")
       .modal({
         closable: false,
         onApprove: function () {
-          if ($this.data("type") == "form") {
+          if ($this.data("type") === "form") {
             $($this.data("form")).submit();
             return;
           }
@@ -1608,7 +1610,7 @@ $(document).ready(function () {
     $($(this).data("modal")).modal("show");
   });
   $(".delete-post.button").click(function () {
-    var $this = $(this);
+    const $this = $(this);
     $.post($this.data("request-url"), {
       _csrf: csrf
     }).done(function () {
@@ -1637,23 +1639,23 @@ $(document).ready(function () {
 
   // Set anchor.
   $(".markdown").each(function () {
-    var headers = {};
+    const headers = {};
     $(this)
       .find("h1, h2, h3, h4, h5, h6")
       .each(function () {
-        var node = $(this);
-        var val = encodeURIComponent(
+        let node = $(this);
+        const val = encodeURIComponent(
           node
             .text()
             .toLowerCase()
             .replace(/[^\u00C0-\u1FFF\u2C00-\uD7FF\w\- ]/g, "")
             .replace(/[ ]/g, "-")
         );
-        var name = val;
+        let name = val;
         if (headers[val] > 0) {
           name = val + "-" + headers[val];
         }
-        if (headers[val] == undefined) {
+        if (headers[val] === undefined) {
           headers[val] = 1;
         } else {
           headers[val] += 1;
@@ -1694,13 +1696,13 @@ $(document).ready(function () {
     }
   }
 
-  var routes = {
+  const routes = {
     "div.user.settings": initUserSettings,
     "div.repository.settings.collaboration": initRepositoryCollaboration,
     "div.webhook.settings": initWebhookSettings
   };
 
-  var selector;
+  let selector;
   for (selector in routes) {
     if ($(selector).length > 0) {
       routes[selector]();
@@ -1728,17 +1730,17 @@ function deSelect() {
 function selectRange($list, $select, $from) {
   $list.removeClass("active");
   if ($from) {
-    var a = parseInt($select.attr("rel").substr(1));
-    var b = parseInt($from.attr("rel").substr(1));
-    var c;
-    if (a != b) {
+    let a = parseInt($select.attr("rel").substr(1));
+    let b = parseInt($from.attr("rel").substr(1));
+    let c;
+    if (a !== b) {
       if (a > b) {
         c = a;
         a = b;
         b = c;
       }
-      var classes = [];
-      for (var i = a; i <= b; i++) {
+      const classes = [];
+      for (let i = a; i <= b; i++) {
         classes.push(".L" + i);
       }
       $list.filter(classes.join(",")).addClass("active");
@@ -1760,9 +1762,9 @@ function getByteLen(normalVal) {
   // Force string type
   normalVal = String(normalVal);
 
-  var byteLen = 0;
-  for (var i = 0; i < normalVal.length; i++) {
-    var c = normalVal.charCodeAt(i);
+  let byteLen = 0;
+  for (let i = 0; i < normalVal.length; i++) {
+    const c = normalVal.charCodeAt(i);
     byteLen +=
       c < 1 << 7
         ? 1
@@ -1782,14 +1784,14 @@ function getByteLen(normalVal) {
 }
 
 function showMessageMaxLength(maxLen, textElemId, counterId) {
-  var $msg = $("#" + textElemId);
+  const $msg = $("#" + textElemId);
   $("#" + counterId).html(maxLen - getByteLen($msg.val()));
 
-  var onMessageKey = function (e) {
-    var $msg = $(this);
-    var text = $msg.val();
-    var len = getByteLen(text);
-    var remainder = maxLen - len;
+  const onMessageKey = function (e) {
+    const $msg = $(this);
+    const text = $msg.val();
+    const len = getByteLen(text);
+    let remainder = maxLen - len;
 
     if (len >= maxLen) {
       $msg.val($msg.val().substr(0, maxLen));
