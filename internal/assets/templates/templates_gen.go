@@ -760,7 +760,7 @@ func homeTmpl() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "home.tmpl", size: 1394, mode: os.FileMode(420), modTime: time.Unix(1600806090, 0)}
+	info := bindataFileInfo{name: "home.tmpl", size: 1394, mode: os.FileMode(420), modTime: time.Unix(1601049679, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
