@@ -4,9 +4,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	{{if not .PageIsAdmin}}
-		<meta name="author" content="{{if .Repository}}{{.Owner.Name}}{{else}}Gogs{{end}}" />
-		<meta name="description" content="{{if .Repository}}{{.Repository.Name}}{{if .Repository.Description}} - {{.Repository.Description}}{{end}}{{else}}Gogs is a painless self-hosted Git service{{end}}" />
-		<meta name="keywords" content="go, git, self-hosted, gogs">
+		<meta name="author" content="{{if .Repository}}{{.Owner.Name}}{{else}}ntGogs{{end}}" />
+		<meta name="description" content="{{if .Repository}}{{.Repository.Name}}{{if .Repository.Description}} - {{.Repository.Description}}{{end}}{{else}}Git server.{{end}}" />
+		<meta name="keywords" content="go, git, self-hosted, gogs, ntgogs, code, software, development, golang, server">
 	{{end}}
 	<meta name="referrer" content="no-referrer" />
 	<meta name="_csrf" content="{{.CSRFToken}}" />
@@ -30,27 +30,40 @@
 		<meta property="og:url" content="{{AppURL}}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="{{AppName}}">
-		<meta property="og:description" content="Gogs is a painless self-hosted Git service.">
+		<meta property="og:description" content="Git server.">
 		<meta property="og:image" content="{{AppURL}}img/favicon.png" />
-		<meta property="og:site_name" content="Gogs">
+		<meta property="og:site_name" content="ntGogs">
 	{{end}}
 
 	<link rel="shortcut icon" href="{{AppSubURL}}/img/favicon.png" />
 
-	<script src="{{AppSubURL}}/js/jquery-3.4.1.min.js"></script>
+	<link rel="preload" href="{{AppSubURL}}/js/libs/jquery-3.4.1.min.js" as="script" />
+	<link rel="preload" href="{{AppSubURL}}/js/libs/jquery.are-you-sure.js" as="script" />
+	<link rel="preload" href="{{AppSubURL}}/js/libs/starfield.js" as="script" />
+	<script src="{{AppSubURL}}/js/libs/jquery-3.4.1.min.js"></script>
 	<script src="{{AppSubURL}}/js/libs/jquery.are-you-sure.js"></script>
 	<script src="{{AppSubURL}}/js/libs/starfield.js"></script>
+
+	<link rel="preload" href="{{AppSubURL}}/assets/font-awesome-4.6.3/css/font-awesome.min.css" as="style" />
+	<link rel="preload" href="{{AppSubURL}}/assets/octicons-4.3.0/octicons.min.css" as="style" />
+	<link rel="preload" href="{{AppSubURL}}/assets/Fira_Code_v5.2/fira_code.css" as="style" />
 	<link rel="stylesheet" href="{{AppSubURL}}/assets/font-awesome-4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{AppSubURL}}/assets/octicons-4.3.0/octicons.min.css">
 	<link rel="stylesheet" href="{{AppSubURL}}/assets/Fira_Code_v5.2/fira_code.css">
 
 	<!-- notebook.js for rendering ipython notebooks and marked.js for rendering markdown in notebooks -->
 	{{if .IsIPythonNotebook}}
+		<link rel="preload" href="{{AppSubURL}}/plugins/notebookjs-0.4.2/notebook.min.js" as="script" />
+		<link rel="preload" href="{{AppSubURL}}/plugins/marked-0.8.1/marked.min.js" as="script" />
 		<script src="{{AppSubURL}}/plugins/notebookjs-0.4.2/notebook.min.js"></script>
 		<script src="{{AppSubURL}}/plugins/marked-0.8.1/marked.min.js"></script>
 	{{end}}
 
 	{{if .RequireSimpleMDE}}
+		<link rel="preload" href="{{AppSubURL}}/plugins/simplemde-1.10.1/simplemde.min.css" as="style" />
+		<link rel="preload" href="{{AppSubURL}}/plugins/simplemde-1.10.1/simplemde.min.js" as="script" />
+		<link rel="preload" href="{{AppSubURL}}/plugins/codemirror-5.17.0/addon/mode/loadmode.js" as="script" />
+		<link rel="preload" href="{{AppSubURL}}/plugins/codemirror-5.17.0/mode/meta.js" as="script" />
 		<link rel="stylesheet" href="{{AppSubURL}}/plugins/simplemde-1.10.1/simplemde.min.css">
 		<script src="{{AppSubURL}}/plugins/simplemde-1.10.1/simplemde.min.js"></script>
 		<script src="{{AppSubURL}}/plugins/codemirror-5.17.0/addon/mode/loadmode.js"></script>
@@ -61,6 +74,8 @@
 	{{end}}
 
 	<!-- Stylesheet -->
+	<link rel="preload" href="{{AppSubURL}}/css/semantic-2.4.2.min.css" as="style" />
+	<link rel="preload" href="{{AppSubURL}}/css/gogs.min.css?v={{BuildCommit}}" as="style" />
 	<link rel="stylesheet" href="{{AppSubURL}}/css/semantic-2.4.2.min.css">
 	<link rel="stylesheet" href="{{AppSubURL}}/css/gogs.min.css?v={{BuildCommit}}">
 	<noscript>
@@ -71,6 +86,8 @@
 	</noscript>
 
 	<!-- JavaScript -->
+	<link rel="preload" href="{{AppSubURL}}/js/semantic-2.4.2.min.js" as="script" />
+	<link rel="preload" href="{{AppSubURL}}/js/gogs.js?v={{BuildCommit}}" as="script" />
 	<script src="{{AppSubURL}}/js/semantic-2.4.2.min.js"></script>
 	<script src="{{AppSubURL}}/js/gogs.js?v={{BuildCommit}}"></script>
 
