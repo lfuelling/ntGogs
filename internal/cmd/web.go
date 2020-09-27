@@ -634,6 +634,7 @@ func runWeb(c *cli.Context) error {
 			Gclifetime:     conf.Session.GCInterval,
 			Maxlifetime:    conf.Session.MaxLifeTime,
 			Secure:         conf.Session.CookieSecure,
+			CookieSameSite: conf.Session.CookieSameSite,
 		}),
 		csrf.Csrfer(csrf.Options{
 			Secret:         conf.Security.SecretKey,
