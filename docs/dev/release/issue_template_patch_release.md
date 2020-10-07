@@ -1,17 +1,17 @@
 ## Before release
 
-On develop branch:
+On release branch:
 
-- [ ] Update [CHANGELOG](https://github.com/gogs/gogs/blob/main/CHANGELOG.md) to include entries for the current patch release.
+- [ ] Make sure all commits are cherry-picked from the develop branch by checking the patch milestone.
+- [ ] Update [CHANGELOG](https://github.com/gogs/gogs/blob/main/CHANGELOG.md) to include entries for the current patch release, e.g. `git log v0.12.1...HEAD --pretty=format:'- [ ] %H %s' --reverse`:
+	- [ ] _link to the commit_
 
 ## During release
 
 On release branch:
 
-- [ ] Cherry-pick commits from develop branch:
-	- [ ] _link to the commit_
-- [ ] Wait for GitHub Actions to complete and no failed jobs.
 - [ ] Update the [hard-coded version](https://github.com/gogs/gogs/blob/main/gogs.go#L21) to the current release, e.g. `0.12.0` -> `0.12.1`.
+- [ ] Wait for GitHub Actions to complete and no failed jobs.
 - [ ] Publish a new [GitHub release](https://github.com/gogs/gogs/releases) with entries from [CHANGELOG](https://github.com/gogs/gogs/blob/main/CHANGELOG.md) for the current patch release and all previous releases with same minor version.
 - [ ] Update all previous GitHub releases with same minor version with the warning:
     ```
@@ -34,5 +34,9 @@ On release branch:
 
 On develop branch:
 
+- [ ] Post the following message on issues that are included in the patch milestone:
+    ```
+    The <MAJOR>.<MINOR>.<PATCH> has been released.
+    ```
 - [ ] Update the repository mirror on [Gitee](https://gitee.com/unknwon/gogs).
 - [ ] Reply to the release topic for the minor release on [Gogs Discussion](https://discuss.gogs.io/c/announcements/5).

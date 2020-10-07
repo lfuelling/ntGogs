@@ -141,16 +141,11 @@ func openDB(opts conf.DatabaseOpts, cfg *gorm.Config) (*gorm.DB, error) {
 //
 // NOTE: Lines are sorted in alphabetical order, each letter in its own line.
 var Tables = []interface{}{
-	new(AccessToken),
+	new(Access), new(AccessToken),
 	new(LFSObject), new(LoginSource),
 }
 
-func Init() (*gorm.DB, error) {
-	w, err := newLogWriter()
-	if err != nil {
-		return nil, errors.Wrap(err, "new log writer")
-	}
-
+func Init(w logger.Writer) (*gorm.DB, error) {
 	level := logger.Info
 	if conf.IsProdMode() {
 		level = logger.Warn

@@ -38,7 +38,7 @@ var Serv = cli.Command{
 // logs error message on the server side. When not in "prod" mode,
 // error message is also printed to the client for easier debugging.
 func fail(userMessage, errMessage string, args ...interface{}) {
-	fmt.Fprintln(os.Stderr, "Gogs:", userMessage)
+	_, _ = fmt.Fprintln(os.Stderr, "Gogs:", userMessage)
 
 	if len(errMessage) > 0 {
 		if !conf.IsProdMode() {
@@ -47,10 +47,11 @@ func fail(userMessage, errMessage string, args ...interface{}) {
 		log.Error(errMessage, args...)
 	}
 
+	log.Stop()
 	os.Exit(1)
 }
 
-func setup(c *cli.Context, logPath string, connectDB bool) {
+func setup(c *cli.Context, logFile string, connectDB bool) {
 	conf.HookMode = true
 
 	var customConf string
@@ -73,7 +74,7 @@ func setup(c *cli.Context, logPath string, connectDB bool) {
 
 	err = log.NewFile(log.FileConfig{
 		Level:    level,
-		Filename: filepath.Join(conf.Log.RootPath, logPath),
+		Filename: filepath.Join(conf.Log.RootPath, "hooks", logFile),
 		FileRotationConfig: log.FileRotationConfig{
 			Rotate:  true,
 			Daily:   true,
@@ -209,11 +210,12 @@ func runServ(c *cli.Context) error {
 				fail("Internal error", "Failed to get user by key ID '%d': %v", key.ID, err)
 			}
 
-			mode, err := db.UserAccessMode(user.ID, repo)
-			if err != nil {
-				fail("Internal error", "Failed to check access: %v", err)
-			}
-
+			mode := db.Perms.AccessMode(user.ID, repo.ID,
+				db.AccessModeOptions{
+					OwnerID: repo.OwnerID,
+					Private: repo.IsPrivate,
+				},
+			)
 			if mode < requestMode {
 				clientMessage := _ACCESS_DENIED_MESSAGE
 				if mode >= db.AccessModeRead {
